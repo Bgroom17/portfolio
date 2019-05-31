@@ -1,64 +1,66 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Slab&display=swap');
 
-body{
-      background-color: teal;
+body {
+    background-color: teal;
     color: white;
 }
 
 
-h1{
+h1 {
     font-size: 5em;
     padding-left: 25%;
     font-family: 'Josefin Slab', serif;
     font-weight: bolder;
 }
 
- h3{
+h3 {
     font-family: 'Josefin Slab', serif;
     font-size: 4em;
     font-weight: bold;
 }
 
-.listContainer{
+.listContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
 }
 
-.inputContainer{
+.inputContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
 }
 
-input:nth-child(1), input:nth-child(2), input:nth-child(3){
+input:nth-child(1),
+input:nth-child(2),
+input:nth-child(3) {
     width: 90%;
     font-family: 'Josefin Slab', serif;
     font-size: 2.7em;
     padding: 2%;
-    
+
 }
 
-li{
+li {
     list-style: none;
     font-size: 3.5em;
     font-family: 'Josefin Slab', serif;
     padding: 2%;
-   
+
 }
 
-li:nth-child(even){
+li:nth-child(even) {
     background-color: white;
     color: black;
-    
+
 }
 
-ul{
-     padding: 0px;
+ul {
+    padding: 0px;
 }
 
-input:nth-child(4){
-   
+input:nth-child(4) {
+
     position: absolute;
     bottom: 5%;
     right: 5%;
@@ -66,4 +68,12 @@ input:nth-child(4){
     font-size: 6em;
     padding: 1%;
     background-color: white;
+}
+
+#totalListPrice {
+    font-size: 2em;
+    background-color: darkmagenta;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
 }
