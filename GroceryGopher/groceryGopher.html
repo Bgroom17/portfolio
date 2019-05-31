@@ -1,56 +1,65 @@
 <!doctype html>
 <html>
+
 <head>
-  <title>Grocery Gopher</title>
- 
-  <link  rel="stylesheet" type="text/css" href="groceryGopher.css">
+    <title>Grocery Gopher</title>
+
+    <link rel="stylesheet" type="text/css" href="groceryGopher.css">
 </head>
 
 <body>
     <h1>GroceryGopher</h1>
-    
+
     <div class="listContainer">
-    
-     <div id='itemDescription'>
-        <h3>Item</h3>
-        <ul id='itemDescriptionList'>
-        </ul>
-    </div>
-    
-    <div id='itemQuantity'>
-        <h3>Quantity</h3>
-        <ul id='itemQuantityList'>
-        </ul>
-    </div>
-    
-   
-    
-    <div id='itemPrice'>
-        <h3>Price</h3>
-        <ul id='itemPriceList'>
-        </ul>
-    </div>
-        
-    </div>
-    
-    <div class="inputContainer">
-    
-     <input type='text' id='itemD' placeholder="Enter item">
-    
-    <input type='text' id='quantity' placeholder="Enter Quantity">
-    
-    <input type='text' id='price' placeholder="Enter Price">
-        
+
+        <div id='itemDescription'>
+            <h3>Item</h3>
+            <ul id='itemDescriptionList'>
+            </ul>
         </div>
-   
+
+        <div id='itemQuantity'>
+            <h3>Quantity</h3>
+            <ul id='itemQuantityList'>
+            </ul>
+        </div>
+
+
+
+        <div id='itemPrice'>
+            <h3>Price (each)</h3>
+            <ul id='itemPriceList'>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="inputContainer">
+
+        <input type='text' id='itemD' placeholder="Enter item">
+
+        <input type='text' id='quantity' placeholder="Enter Quantity">
+
+        <input type='text' id='price' placeholder="Enter Price">
+
+    </div>
+
     <input type='button' value='ADD' id='addNew'>
-    
-    
-	 <script src="groceryGopher.js"></script>
+
+    <div id="errorMessage">
+    </div>
+
+    <div id="totalListPrice">
+    </div>
+
+
+
+
+    <script src="groceryGopher.js"></script>
 </body>
-    
-    
-    
-    
-    
+
+
+
+
+
 </html>
