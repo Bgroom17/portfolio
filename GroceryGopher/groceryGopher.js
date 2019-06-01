@@ -115,6 +115,8 @@ function createList() {
         itemDes.value = '';
         itemQ.value = '';
         itemP.value = '';
+        
+        document.getElementById('errorMessage').innerHTML= "<p>" + '' + "</p>";
 
 
     } else {
@@ -122,7 +124,8 @@ function createList() {
         //tell themthat its not working - error messageanddo nothing
         
        
-        document.getElementById('errorMessage').innerHTML= "<p>" +'Error: enter item, quantity, and price' + "</p>";
+        document.getElementById('errorMessage').innerHTML= "<p>" + 'Error: enter item, quantity, and price' + "</p>";
+       
         
     }
 
