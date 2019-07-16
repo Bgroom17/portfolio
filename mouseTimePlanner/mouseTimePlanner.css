@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body {
+    background-color: #4483c3;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    
+}
+
+li {
+    list-style: none;
+    
+}
+
+h1{
+    color: #971518;
+    font-weight: bolder;
+    text-align: center;
+    
+}
+
+
+
+#menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#menu li{
+    font-weight: bolder;
+}
+
+.chosenRide{
+    color: #971518;
+}
