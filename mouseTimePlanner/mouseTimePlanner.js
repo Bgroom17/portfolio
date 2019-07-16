@@ -87,14 +87,32 @@ function addToPlans(ride){
 //
 //}
 //
+function searchEngine(){
+    var input = document.getElementById('myInput');
+    let filter = input.value.toUpperCase();
+    var ul = document.getElementById('rideName');
+    let li = ul.getElementsByTagName('li');
+    
+    for ( i = 0; i<li.length; i++){
+       let a = li[i].getElementsByTagName('a')[0];
+        let txtValue = a.textContent || a.innerText;
+        if(txtValue.toUpperCase().indexOf(filter) > -1){
+            li[i].style.display = '';
+        }
+        else{
+            li[i].style.display = 'none';
+        }   
+    }
+    
+}
 
 function displayList(){
-
-
     var length = myRides.length;
-for (var i = 0; i < length; i++){
+    const parent = document.getElementById('myPlans');
+    parent.innerHTML = '';
+    for (var i = 0; i < length; i++){
     var chosenRideLi = '<li>' + myRides[i] + '</li>';
-    document.getElementById('myPlans').innerHTML += chosenRideLi;
+    parent.innerHTML += chosenRideLi;
     console.log(myRides[i])
 }
 
