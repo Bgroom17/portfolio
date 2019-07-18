@@ -1,5 +1,12 @@
 //api list of rides comes from https://touringplans.com/api#
 
+
+
+
+
+
+
+
 fetch('/rides.json')
     .then(function (response) {
         return response.json();
@@ -35,6 +42,8 @@ async function buildList() {
     showList(rides);
 
 }
+
+
 
 
 function showList(rides) {
@@ -97,8 +106,7 @@ function searchEngine() {
         let txtValue = a.textContent || a.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = '';
-        } 
-        else {
+        } else {
             li[i].style.display = 'none';
         }
     }
@@ -116,4 +124,31 @@ function displayList() {
     }
 
 
+}
+
+//view
+
+const ridesLink = document.getElementById('ridesLink');
+const plansLink = document.getElementById('plansLink');
+const displayedHTML = document.getElementById('displayedHTML');
+
+if (ridesLink.touchend == true) {
+    displayedHTML.innerHTML = `
+<input type="text" id="myInput" onkeyup="searchEngine()" placeholder="Search for rides..">   
+<div>
+    <ul id = rideName>
+    </ul>
+</div>`
+} else if (plansLink.touchend == true) {
+    displayedHTML.innerHTML = `
+<div>
+    <h1>My Plans</h1>
+    <ul id=myPlans>
+    </ul>
+</div>
+`
+} else {
+    ///default
+    displayedHTML.innerHTML =
+        `<p> Test </p>`
 }
