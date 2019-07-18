@@ -1,12 +1,5 @@
 //api list of rides comes from https://touringplans.com/api#
 
-
-
-
-
-
-
-
 fetch('/rides.json')
     .then(function (response) {
         return response.json();
@@ -15,13 +8,11 @@ fetch('/rides.json')
         console.log(JSON.stringify(myJson));
     });
 
-function renderRideList() {
-
-}
+//function renderRideList() {
+//
+//}
 
 var myRides = [];
-
-
 var data = [];
 
 const ridesURL = '/rides.json';
@@ -31,10 +22,9 @@ function getJson(url) {
     return fetch(url)
         .then(function (request) {
             return request.json();
-
         })
-
 }
+
 
 async function buildList() {
     const rides = await getJson(ridesURL);
@@ -42,7 +32,6 @@ async function buildList() {
     showList(rides);
 
 }
-
 
 
 
@@ -63,7 +52,7 @@ function showList(rides) {
 
 }
 
-buildList();
+//buildList();
 
 
 
@@ -75,9 +64,9 @@ function addToPlans(ride) {
 
     myRides.push(event.target.innerHTML);
     console.log(myRides)
-    displayList();
-
+    
 }
+
 //
 // window.localStorage.setItem('myRides', JSON.stringify(myRides));
 //
@@ -95,6 +84,8 @@ function addToPlans(ride) {
 //
 //}
 //
+
+
 function searchEngine() {
     var input = document.getElementById('myInput');
     let filter = input.value.toUpperCase();
@@ -110,8 +101,8 @@ function searchEngine() {
             li[i].style.display = 'none';
         }
     }
-
 }
+
 
 function displayList() {
     var length = myRides.length;
@@ -121,9 +112,8 @@ function displayList() {
         var chosenRideLi = '<li>' + myRides[i] + '</li>';
         parent.innerHTML += chosenRideLi;
         console.log(myRides[i])
+        
     }
-
-
 }
 
 //view
@@ -132,23 +122,37 @@ const ridesLink = document.getElementById('ridesLink');
 const plansLink = document.getElementById('plansLink');
 const displayedHTML = document.getElementById('displayedHTML');
 
-if (ridesLink.touchend == true) {
+function buildRidesPage() {
     displayedHTML.innerHTML = `
 <input type="text" id="myInput" onkeyup="searchEngine()" placeholder="Search for rides..">   
 <div>
     <ul id = rideName>
     </ul>
 </div>`
-} else if (plansLink.touchend == true) {
-    displayedHTML.innerHTML = `
-<div>
-    <h1>My Plans</h1>
-    <ul id=myPlans>
-    </ul>
-</div>
-`
-} else {
-    ///default
-    displayedHTML.innerHTML =
-        `<p> Test </p>`
+    buildList();
 }
+ridesLink.addEventListener('touchend', buildRidesPage)
+
+
+function buildMyPlansPage() {
+    
+    if (myRides.length == 0){
+            displayedHTML.innerHTML = `<p>No rides selected</p>`
+        }
+    
+    else{
+    displayedHTML.innerHTML = `
+<h1>My Plans</h1>
+   <ul id=myPlans>
+  </ul>`
+    
+    
+    displayList();
+    }
+//    addToPlans(rides);
+    
+}
+
+plansLink.addEventListener('touchend', buildMyPlansPage)
+
+

@@ -20,23 +20,27 @@ h1{
     
 }
 
-
-
-#menu{
+#buttonParent{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-#menu li{
+button{
+    
+    font-size: 2em;
+    color: white;
     font-weight: bolder;
 }
+
+
 
 .chosenRide{
     color: #971518;
 }
 
 #myInput{
-    width: 100%;
-    font-size: 2em;
+    width: 90%;
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
 }
