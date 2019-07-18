@@ -30,6 +30,7 @@ async function buildList() {
     const rides = await getJson(ridesURL);
     console.log(rides);
     showList(rides);
+    
 
 }
 
@@ -111,10 +112,18 @@ function displayList() {
     for (var i = 0; i < length; i++) {
         var chosenRideLi = '<li>' + myRides[i] + '</li>';
         parent.innerHTML += chosenRideLi;
+        myRides.sort();
         console.log(myRides[i])
         
     }
 }
+
+//function count(){
+//    for (i = 0; i <  myRides.length; i++){
+//        displayedHTML.innerHTML = `<p>` + myRides.length  + ` Rides Selected</p>`;
+//    }
+//}
+
 
 //view
 
@@ -126,9 +135,11 @@ function buildRidesPage() {
     displayedHTML.innerHTML = `
 <input type="text" id="myInput" onkeyup="searchEngine()" placeholder="Search for rides..">   
 <div>
+    <p id= 'runningCount'>` + myRides.length  + ` Rides Selected</p>
     <ul id = rideName>
     </ul>
 </div>`
+    
     buildList();
 }
 ridesLink.addEventListener('touchend', buildRidesPage)
@@ -142,7 +153,7 @@ function buildMyPlansPage() {
     
     else{
     displayedHTML.innerHTML = `
-<h1>My Plans</h1>
+<h1>My Plans (`+ myRides.length  +`)</h1>
    <ul id=myPlans>
   </ul>`
     
