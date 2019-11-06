@@ -34,7 +34,7 @@ async function buildList() {
 
 }
 
-
+//<img id="pant2" src="images/pants-07.jpg" alt="green pants">
 
 function showList(rides) {
     const rideList = document.getElementById('rideName')
